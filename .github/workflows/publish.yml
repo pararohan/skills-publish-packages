@@ -43,4 +43,6 @@ jobs:
       - name: Generate SBOM
         uses: anchore/sbom-action@v0
         with:
-          image: ghcr.io/pararohan/publish-packages/game
+          image: ghcr.io/pararohan/publish-packages/game@${{ steps.build.outputs.digest }}
+          format: spdx-json
+          output-file: sbom.spdx.json
