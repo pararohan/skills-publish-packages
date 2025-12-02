@@ -40,3 +40,7 @@ jobs:
           subject-name: ghcr.io/pararohan/publish-packages/game
           subject-digest: ${{ steps.build.outputs.digest }}
           push-to-registry: true
+      - name: Generate SBOM
+        uses: anchore/sbom-action@v0
+        with:
+          image: ghcr.io/pararohan/publish-packages/game
