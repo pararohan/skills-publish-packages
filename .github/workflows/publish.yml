@@ -52,7 +52,7 @@ jobs:
           name: sbom
           path: sbom.spdx.json
       - name: Attest SBOM
-        uses: actions/attest-sbom@v1
+        uses: actions/attest-sbom@v3
         with:
           subject-name: ghcr.io/pararohan/publish-packages/game
           subject-digest: ${{ steps.build.outputs.digest }}
